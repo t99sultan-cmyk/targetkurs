@@ -1,0 +1,114 @@
+/** Solution Section Styles */
+
+.solution-section {
+  padding: 20px 0 60px 0;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.solution-promise {
+  margin: 0 auto 3rem auto;
+  max-width: 800px;
+  background: linear-gradient(135deg, rgba(30,30,40,0.8), rgba(20,20,30,0.9));
+  border: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+.solution-promise h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.solution-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  position: relative;
+}
+
+/* Connective Line */
+.solution-steps::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  right: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.3) 50%, transparent 50%);
+  background-size: 20px 2px;
+  z-index: 0;
+}
+
+@media (max-width: 992px) {
+  .solution-steps::before {
+    display: none;
+  }
+}
+
+.step-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  z-index: 1;
+  transition: transform var(--smooth), box-shadow var(--smooth);
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ffffff, #f0f0f5);
+  border: 2px solid var(--accent-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 20px rgba(245, 207, 123, 0.2);
+}
+
+.step-title {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  min-height: 3rem;
+  color: var(--text-primary);
+}
+
+.step-compare {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.step-compare p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding: 12px 16px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.step-compare p.wrong {
+  background: rgba(255, 51, 102, 0.05);
+  color: #1a1a1a;
+  border-left: 3px solid #ff3366;
+}
+
+.step-compare p.right {
+  background: rgba(0, 230, 118, 0.05);
+  color: #1a1a1a;
+  border-left: 3px solid #00e676;
+}
+
+.text-center { text-align: center; }
+.text-md { font-size: 1rem; }
