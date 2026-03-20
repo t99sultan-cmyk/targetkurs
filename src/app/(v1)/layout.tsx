@@ -20,8 +20,8 @@ export default function V1Layout({ children }: { children: ReactNode }) {
         overflowX: 'hidden',
         position: 'relative'
       }}>
-        <Script id="yandex-metrika-v1" strategy="afterInteractive">
-          {`
+        <Script id="yandex-metrika-v1" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `
             (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
             m[i].l=1*new Date();
             for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -35,8 +35,8 @@ export default function V1Layout({ children }: { children: ReactNode }) {
                 webvisor:true,
                 ecommerce:"dataLayer"
             });
-          `}
-        </Script>
+          `
+        }} />
         <noscript>
           <div>
             <img src="https://mc.yandex.ru/watch/108169318" style={{ position: 'absolute', left: '-9999px' }} alt="" />
