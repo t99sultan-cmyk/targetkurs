@@ -40,12 +40,12 @@ export function IncomeCalculator() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-zinc-900 border border-zinc-800 rounded-[2rem] p-8 md:p-12 shadow-2xl mb-12"
+            className="bg-zinc-900 border border-zinc-800 rounded-3xl sm:rounded-[2rem] p-6 sm:p-8 md:p-12 shadow-2xl mb-12 w-full max-w-full overflow-hidden box-border"
           >
             <div className="mb-10">
-              <div className="flex justify-between items-end mb-6">
-                <span className="text-zinc-400 font-medium">Твоя цель на месяц:</span>
-                <span className="text-3xl md:text-5xl font-black text-white">{formatMoney(targetIncome)}</span>
+              <div className="flex flex-col sm:flex-row justify-between items-center sm:items-end mb-6 gap-2 sm:gap-0 mt-4 sm:mt-0 text-center sm:text-left w-full max-w-full">
+                <span className="text-zinc-400 font-medium whitespace-normal">Твоя цель на месяц:</span>
+                <span className="text-4xl md:text-5xl font-black text-white break-words">{formatMoney(targetIncome)}</span>
               </div>
               
               <input 

@@ -102,7 +102,7 @@ export function CasesSection() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col gap-6 w-full"
+            className="flex flex-col gap-6 w-full max-w-full overflow-hidden"
           >
             <div className="text-center space-y-1 mb-2">
               <h4 className="text-xl font-bold text-zinc-800">У кого я учился?</h4>
@@ -111,7 +111,7 @@ export function CasesSection() {
             <motion.div 
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="flex justify-center items-center gap-2 md:gap-4 overflow-x-auto pb-4 snap-x hide-scrollbar max-w-full px-4 md:px-0 pt-4"
+              className="flex justify-start md:justify-center items-center gap-4 overflow-x-auto pb-4 snap-x hide-scrollbar max-w-full px-4 pt-4"
             >
               
               {/* Mentor 1 */}

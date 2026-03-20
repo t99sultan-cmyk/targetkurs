@@ -99,7 +99,7 @@ export function PricingSection() {
 
               {/* Extra button after bonuses per user request */}
               <div className="pt-8 flex justify-center w-full">
-                <a href="https://wa.me/77064089933?text=Здравствуйте,%20хочу%20записаться%20на%20интенсив" target="_blank" rel="noopener noreferrer" className="block w-full sm:w-auto">
+                <a href="https://wa.me/77765282788?text=Здравствуйте,%20хочу%20пройти%20интенсив" target="_blank" rel="noopener noreferrer" className="block w-full sm:w-auto">
                   <Button size="lg" className="h-16 px-8 text-lg font-black bg-white hover:bg-zinc-100 text-zinc-950 rounded-2xl shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all hover:scale-105 group relative overflow-hidden w-full sm:w-auto">
                     <span className="relative z-10 flex items-center justify-center gap-2">
                        ЗАПИСАТЬСЯ НА ИНТЕНСИВ ЗА 1 990₸
@@ -114,15 +114,15 @@ export function PricingSection() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="p-8 md:p-10 rounded-[3rem] bg-gradient-to-b from-zinc-800 to-zinc-900 border border-zinc-700 shadow-2xl lg:sticky lg:top-24"
+              className="p-6 sm:p-8 md:p-10 rounded-[2rem] sm:rounded-[3rem] bg-gradient-to-b from-zinc-800 to-zinc-900 border border-zinc-700 shadow-2xl lg:sticky lg:top-24 w-full max-w-full overflow-hidden overflow-x-hidden box-border"
            >
               <div className="text-center mb-8">
-                 <div className="flex flex-col items-center justify-center gap-2 mb-6 bg-zinc-900/80 p-8 rounded-[2rem] border border-zinc-700 shadow-inner">
-                    <div className="text-zinc-400 font-bold uppercase tracking-widest text-sm mb-2">Твоя цена сейчас:</div>
-                    <div className="flex flex-row items-baseline justify-center gap-2 sm:gap-4 md:gap-6 whitespace-nowrap w-full overflow-hidden shrink-0">
-                      <span className="text-red-500/70 line-through text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter decoration-2 sm:decoration-4">250 000₸</span>
+                 <div className="flex flex-col items-center justify-center gap-2 mb-6 bg-zinc-900/80 p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] border border-zinc-700 shadow-inner w-full max-w-full overflow-hidden box-border">
+                    <div className="text-zinc-400 font-bold uppercase tracking-widest text-sm mb-2 text-center w-full">Твоя цена сейчас:</div>
+                    <div className="flex flex-col sm:flex-row items-center sm:items-baseline justify-center gap-1 sm:gap-4 md:gap-6 w-full max-w-full overflow-hidden shrink-0">
+                      <span className="text-red-500/70 line-through text-xl sm:text-3xl md:text-4xl font-black tracking-tighter decoration-2 sm:decoration-4">250 000₸</span>
                       <span className="text-white text-[2.5rem] sm:text-6xl md:text-7xl font-black tracking-tighter drop-shadow-md flex items-baseline">
-                        1&nbsp;990<span className="text-2xl sm:text-4xl md:text-5xl text-emerald-500">₸</span>
+                        1 990<span className="text-2xl sm:text-4xl md:text-5xl text-emerald-500">₸</span>
                       </span>
                     </div>
                  </div>
@@ -133,7 +133,7 @@ export function PricingSection() {
                  </div>
               </div>
 
-               <a href="https://wa.me/77064089933?text=Здравствуйте,%20хочу%20записаться%20на%20интенсив" target="_blank" rel="noopener noreferrer" className="block w-full">
+               <a href="https://wa.me/77765282788?text=Здравствуйте,%20хочу%20пройти%20интенсив" target="_blank" rel="noopener noreferrer" className="block w-full">
                  <Button size="lg" className="w-full h-[88px] text-lg sm:text-xl font-black bg-emerald-500 hover:bg-emerald-400 text-zinc-950 rounded-[20px] shadow-[0_0_40px_rgba(16,185,129,0.4)] transition-all hover:scale-[1.02] group relative overflow-hidden px-4 md:px-8">
                    <span className="relative z-10 flex items-center justify-center gap-2 text-center whitespace-normal leading-tight">
                      👉 ЗАПИСАТЬСЯ ЗА 1 990₸

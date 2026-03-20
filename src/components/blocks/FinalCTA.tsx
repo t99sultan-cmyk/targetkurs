@@ -35,7 +35,7 @@ export function FinalCTA() {
 
             <div className="grid md:grid-cols-2 gap-6 mt-12 px-4 max-w-3xl mx-auto">
               {/* Path 1: Join */}
-              <a href="https://wa.me/77064089933?text=Здравствуйте,%20хочу%20записаться%20на%20интенсив" target="_blank" rel="noopener noreferrer" className="block h-full cursor-pointer">
+              <a href="https://wa.me/77765282788?text=Здравствуйте,%20хочу%20пройти%20интенсив" target="_blank" rel="noopener noreferrer" className="block h-full cursor-pointer">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}

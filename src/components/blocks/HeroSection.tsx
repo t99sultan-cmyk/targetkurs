@@ -2,7 +2,6 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Zap, AlertTriangle, Clock } from "lucide-react";
-import { Button } from "@/components/ui/Button";
 import { useState, useEffect } from "react";
 
 import { Countdown } from "@/components/ui/Countdown";
@@ -93,16 +92,6 @@ export function HeroSection() {
 
             <div className="pt-2">
               <Countdown />
-            </div>
-            <div className="pt-4 w-full max-w-sm mx-auto z-40 relative">
-              <a href="https://wa.me/77064089933?text=Здравствуйте,%20хочу%20записаться%20на%20интенсив" target="_blank" rel="noopener noreferrer" className="block w-full cursor-pointer">
-                <Button size="lg" className="w-full h-16 text-lg font-black bg-emerald-500 hover:bg-emerald-400 text-zinc-950 rounded-2xl shadow-[0_0_40px_rgba(16,185,129,0.3)] transition-all hover:scale-105 group relative overflow-hidden">
-                  <span className="relative z-10 flex items-center justify-center gap-2">
-                    УЧАСТВОВАТЬ
-                  </span>
-                  <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out skew-x-12" />
-                </Button>
-              </a>
             </div>
           </motion.div>
 
