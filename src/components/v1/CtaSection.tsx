@@ -39,7 +39,7 @@ const CtaSection: React.FC = () => {
            </div>
 
            <div className="cta-action text-center mt-5 mb-5">
-             <a href="/" className="btn-primary btn-pulse w-full text-center" style={{background: 'linear-gradient(90deg, #d4af37, #f5cf7b)', color: '#1a1a1a', fontSize: '1.1rem', padding: '1rem 2rem', borderRadius: '40px', display: 'block', fontWeight: 700, textDecoration: 'none', boxShadow: '0 10px 20px rgba(212,175,55,0.3)'}}>
+             <a href="/course" className="btn-primary btn-pulse w-full text-center" style={{background: 'linear-gradient(90deg, #d4af37, #f5cf7b)', color: '#1a1a1a', fontSize: '1.1rem', padding: '1rem 2rem', borderRadius: '40px', display: 'block', fontWeight: 700, textDecoration: 'none', boxShadow: '0 10px 20px rgba(212,175,55,0.3)'}}>
                Хочу в команду - готов зарабатывать 500 000₸+
              </a>
            </div>
@@ -92,7 +92,7 @@ const CtaSection: React.FC = () => {
            </div>
 
            <div className="cta-action text-center mt-5">
-             <a href="/" className="btn-primary btn-pulse w-full text-center" style={{background: 'linear-gradient(90deg, #ff6b00, #ff8c00)', color: '#fff', fontSize: '1.2rem', padding: '1rem 2rem', borderRadius: '40px', display: 'block', fontWeight: 700, textDecoration: 'none'}}>
+             <a href="/course" className="btn-primary btn-pulse w-full text-center" style={{background: 'linear-gradient(90deg, #ff6b00, #ff8c00)', color: '#fff', fontSize: '1.2rem', padding: '1rem 2rem', borderRadius: '40px', display: 'block', fontWeight: 700, textDecoration: 'none'}}>
                Хочу в команду - готов зарабатывать 500 000₸+
              </a>
            </div>
