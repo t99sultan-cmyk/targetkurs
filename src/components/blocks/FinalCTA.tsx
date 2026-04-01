@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import { Zap, ChevronRight, XCircle } from "lucide-react";
 import { Countdown } from "@/components/ui/Countdown";
+import { useWhatsAppClick } from "@/hooks/useWhatsAppClick";
 
 export function FinalCTA() {
+  const { handleWhatsAppClick } = useWhatsAppClick();
   return (
     <section className="py-24 bg-zinc-950 text-white relative overflow-hidden" id="final-cta">
       {/* Background Gradients */}
@@ -35,7 +37,7 @@ export function FinalCTA() {
 
             <div className="grid md:grid-cols-2 gap-6 mt-12 px-4 max-w-3xl mx-auto">
               {/* Path 1: Join */}
-              <a href="https://wa.me/77064089933?text=Здравствуйте,%20хочу%20пройти%20интенсив" target="_blank" rel="noopener noreferrer" className="block h-full cursor-pointer">
+              <a href="https://wa.me/77064089933?text=Здравствуйте,%20хочу%20пройти%20интенсив" onClick={handleWhatsAppClick} target="_blank" rel="noopener noreferrer" className="block h-full cursor-pointer">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ReactNode, Suspense } from "react";
 import { Metrika } from "@/components/Metrika";
+import { FBPixel } from "@/components/FBPixel";
 import "./globals.css";
 import { Inter, Outfit } from "next/font/google";
 
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className={`${inter.className}`}>
         <Suspense fallback={null}>
           <Metrika />
+          <FBPixel />
         </Suspense>
         {children}
       </body>
