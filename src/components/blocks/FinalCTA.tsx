@@ -54,9 +54,7 @@ export function FinalCTA() {
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
-                    animate={{ boxShadow: ["0 20px 40px rgba(16,185,129,0.3)", "0 25px 60px rgba(16,185,129,0.5)", "0 20px 40px rgba(16,185,129,0.3)"] }}
-                    transition={{ boxShadow: { duration: 2.5, repeat: Infinity, ease: "easeInOut" } }}
-                    className="group relative p-8 rounded-[2.5rem] bg-emerald-500 text-zinc-950 text-left overflow-hidden h-full"
+                    className="group relative p-8 rounded-[2.5rem] bg-emerald-500 text-zinc-950 text-left overflow-hidden shadow-[0_20px_40px_rgba(16,185,129,0.3)] h-full"
                   >
                     <div className="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-40 transition-opacity">
                       <ChevronRight className="w-12 h-12" />

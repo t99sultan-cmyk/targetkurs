@@ -146,7 +146,7 @@ export function PricingSection() {
 
                <Magnetic intensity={0.3} className="block w-full">
                  <a href="https://wa.me/77064089933?text=Здравствуйте,%20хочу%20пройти%20интенсив" onClick={handleWhatsAppClick} target="_blank" rel="noopener noreferrer" className="block w-full">
-                   <Button size="lg" className="w-full h-[88px] text-lg sm:text-xl font-black bg-emerald-500 hover:bg-emerald-400 text-zinc-950 rounded-[20px] shadow-[0_0_40px_rgba(16,185,129,0.4)] transition-all hover:scale-[1.02] group relative overflow-hidden px-4 md:px-8 animate-pulse-glow">
+                   <Button size="lg" className="w-full h-[88px] text-lg sm:text-xl font-black bg-emerald-500 hover:bg-emerald-400 text-zinc-950 rounded-[20px] shadow-[0_0_40px_rgba(16,185,129,0.4)] transition-all hover:scale-[1.02] group relative overflow-hidden px-4 md:px-8">
                      <span className="relative z-10 flex items-center justify-center gap-2 text-center whitespace-normal leading-tight">
                        👉 ЗАПИСАТЬСЯ ЗА 1 990₸
                      </span>
