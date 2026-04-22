@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Script from "next/script";
 import { ParticlesBackground } from "@/components/ui/ParticlesBackground";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 
 export default function V1Layout({ children }: { children: ReactNode }) {
   return (
@@ -21,6 +22,7 @@ export default function V1Layout({ children }: { children: ReactNode }) {
         overflowX: 'hidden',
         position: 'relative'
       }}>
+        <ScrollProgress color="gold" />
         <ParticlesBackground variant="gold" />
         <Script id="yandex-metrika-v1" strategy="afterInteractive" dangerouslySetInnerHTML={{
           __html: `

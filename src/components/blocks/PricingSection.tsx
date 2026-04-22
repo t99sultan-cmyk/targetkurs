@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/Button";
 import { CheckCircle2, Gift, XCircle, ArrowRight } from "lucide-react";
 import { Countdown } from "@/components/ui/Countdown";
 import { useWhatsAppClick } from "@/hooks/useWhatsAppClick";
+import { SplitTextReveal } from "@/components/ui/SplitTextReveal";
+import { Magnetic } from "@/components/ui/Magnetic";
 
 export function PricingSection() {
   const { handleWhatsAppClick } = useWhatsAppClick();
@@ -27,15 +29,20 @@ export function PricingSection() {
       <div className="container px-4 md:px-6 mx-auto relative z-10">
         
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight flex flex-col items-center gap-4"
-          >
-            <span className="text-5xl">🎯</span>
-            Как попасть в команду и всё это получить?
-          </motion.h2>
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight flex flex-col items-center gap-4">
+            <motion.span
+              className="text-5xl"
+              initial={{ scale: 0, rotate: -90 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 200, damping: 12 }}
+            >
+              🎯
+            </motion.span>
+            <SplitTextReveal type="words" stagger={0.06}>
+              Как попасть в команду и всё это получить?
+            </SplitTextReveal>
+          </h2>
           <div className="space-y-4 text-lg md:text-xl text-zinc-300 font-medium max-w-2xl mx-auto">
              <p>Для тех, кто дошёл до конца, я делаю закрытый оффер.</p>
              <p>Ты можешь получить доступ к моей стратегии, разборам и шаблонам не за <strong className="text-red-400 line-through">250 000₸</strong> (столько стоит моя личная консультация), а за символическую цену.</p>
@@ -101,14 +108,16 @@ export function PricingSection() {
 
               {/* Extra button after bonuses per user request */}
               <div className="pt-8 flex justify-center w-full">
-                <a href="https://wa.me/77064089933?text=Здравствуйте,%20хочу%20пройти%20интенсив" onClick={handleWhatsAppClick} target="_blank" rel="noopener noreferrer" className="block w-full sm:w-auto">
-                  <Button size="lg" className="h-16 px-8 text-lg font-black bg-white hover:bg-zinc-100 text-zinc-950 rounded-2xl shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all hover:scale-105 group relative overflow-hidden w-full sm:w-auto">
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                       ЗАПИСАТЬСЯ НА ИНТЕНСИВ ЗА 1 990₸
-                    </span>
-                    <div className="absolute inset-0 bg-emerald-500/10 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out skew-x-12" />
-                  </Button>
-                </a>
+                <Magnetic intensity={0.25} className="w-full sm:w-auto">
+                  <a href="https://wa.me/77064089933?text=Здравствуйте,%20хочу%20пройти%20интенсив" onClick={handleWhatsAppClick} target="_blank" rel="noopener noreferrer" className="block w-full sm:w-auto">
+                    <Button size="lg" className="h-16 px-8 text-lg font-black bg-white hover:bg-zinc-100 text-zinc-950 rounded-2xl shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all hover:scale-105 group relative overflow-hidden w-full sm:w-auto">
+                      <span className="relative z-10 flex items-center justify-center gap-2">
+                         ЗАПИСАТЬСЯ НА ИНТЕНСИВ ЗА 1 990₸
+                      </span>
+                      <div className="absolute inset-0 bg-emerald-500/10 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out skew-x-12" />
+                    </Button>
+                  </a>
+                </Magnetic>
               </div>
            </motion.div>
 
@@ -135,14 +144,16 @@ export function PricingSection() {
                  </div>
               </div>
 
-               <a href="https://wa.me/77064089933?text=Здравствуйте,%20хочу%20пройти%20интенсив" onClick={handleWhatsAppClick} target="_blank" rel="noopener noreferrer" className="block w-full">
-                 <Button size="lg" className="w-full h-[88px] text-lg sm:text-xl font-black bg-emerald-500 hover:bg-emerald-400 text-zinc-950 rounded-[20px] shadow-[0_0_40px_rgba(16,185,129,0.4)] transition-all hover:scale-[1.02] group relative overflow-hidden px-4 md:px-8">
-                   <span className="relative z-10 flex items-center justify-center gap-2 text-center whitespace-normal leading-tight">
-                     👉 ЗАПИСАТЬСЯ ЗА 1 990₸
-                   </span>
-                   <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out skew-x-12" />
-                 </Button>
-               </a>
+               <Magnetic intensity={0.3} className="block w-full">
+                 <a href="https://wa.me/77064089933?text=Здравствуйте,%20хочу%20пройти%20интенсив" onClick={handleWhatsAppClick} target="_blank" rel="noopener noreferrer" className="block w-full">
+                   <Button size="lg" className="w-full h-[88px] text-lg sm:text-xl font-black bg-emerald-500 hover:bg-emerald-400 text-zinc-950 rounded-[20px] shadow-[0_0_40px_rgba(16,185,129,0.4)] transition-all hover:scale-[1.02] group relative overflow-hidden px-4 md:px-8 animate-pulse-glow">
+                     <span className="relative z-10 flex items-center justify-center gap-2 text-center whitespace-normal leading-tight">
+                       👉 ЗАПИСАТЬСЯ ЗА 1 990₸
+                     </span>
+                     <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out skew-x-12" />
+                   </Button>
+                 </a>
+               </Magnetic>
 
                <div className="mt-8 scale-90">
                  <Countdown />

@@ -1,76 +1,76 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import SplitType from "split-type";
+import { motion, Variants } from "framer-motion";
+import { useMemo } from "react";
+
+type SplitType = "chars" | "words";
+
+const container: Variants = {
+  hidden: {},
+  show: ({ stagger, delay }: { stagger: number; delay: number }) => ({
+    transition: { staggerChildren: stagger, delayChildren: delay },
+  }),
+};
+
+const child: Variants = {
+  hidden: { y: "0.6em", opacity: 0, filter: "blur(8px)" },
+  show: {
+    y: 0,
+    opacity: 1,
+    filter: "blur(0px)",
+    transition: {
+      type: "spring",
+      damping: 14,
+      stiffness: 110,
+      mass: 0.5,
+    },
+  },
+};
 
 export function SplitTextReveal({
   children,
   className = "",
+  stagger = 0.04,
   delay = 0,
-  stagger = 0.025,
-  type = "chars",
+  type = "words",
+  once = true,
+  amount = 0.3,
 }: {
   children: string;
   className?: string;
-  delay?: number;
   stagger?: number;
-  type?: "chars" | "words" | "lines";
+  delay?: number;
+  type?: SplitType;
+  once?: boolean;
+  amount?: number;
 }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-
-    const split = new SplitType(node, { types: type, tagName: "span" });
-    const targets =
-      type === "chars" ? split.chars : type === "words" ? split.words : split.lines;
-    if (!targets) return;
-
-    targets.forEach((el, i) => {
-      const span = el as HTMLElement;
-      span.style.display = "inline-block";
-      span.style.opacity = "0";
-      span.style.transform = "translateY(0.4em) rotateX(-45deg)";
-      span.style.transition =
-        "opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.2)";
-      span.style.transitionDelay = `${delay + i * stagger}s`;
-      span.style.willChange = "opacity, transform";
-    });
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            io.disconnect();
-          }
-        });
-      },
-      { threshold: 0.25 },
-    );
-    io.observe(node);
-
-    return () => {
-      io.disconnect();
-      split.revert();
-    };
-  }, [children, delay, stagger, type]);
-
-  useEffect(() => {
-    if (!visible || !ref.current) return;
-    const targets = ref.current.querySelectorAll(".char, .word, .line");
-    targets.forEach((el) => {
-      const span = el as HTMLElement;
-      span.style.opacity = "1";
-      span.style.transform = "translateY(0) rotateX(0)";
-    });
-  }, [visible]);
+  const parts = useMemo(() => {
+    if (type === "chars") return children.split("");
+    return children.split(/(\s+)/);
+  }, [children, type]);
 
   return (
-    <span ref={ref} className={className} style={{ display: "inline-block" }}>
-      {children}
-    </span>
+    <motion.span
+      className={className}
+      variants={container}
+      custom={{ stagger, delay }}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once, amount }}
+      style={{ display: "inline-block", perspective: 400 }}
+    >
+      {parts.map((part, i) => {
+        if (/^\s+$/.test(part)) return <span key={i}>{part}</span>;
+        return (
+          <motion.span
+            key={i}
+            variants={child}
+            style={{ display: "inline-block", willChange: "transform, opacity, filter" }}
+          >
+            {part}
+          </motion.span>
+        );
+      })}
+    </motion.span>
   );
 }
