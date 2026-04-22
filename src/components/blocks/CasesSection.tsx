@@ -154,7 +154,7 @@ export function CasesSection() {
               {/* Mentor 3 */}
               <div className="group relative w-[140px] md:w-48 xl:w-56 aspect-[3/4] shrink-0 overflow-hidden rounded-2xl shadow-lg border border-zinc-200 snap-center transition-all hover:w-[160px] md:hover:w-56 xl:hover:w-64 hover:shadow-2xl z-10">
                 <Image
-                  src="/oskar.png"
+                  src="/oskar.jpg"
                   alt="Oskar Hartmann"
                   fill
                   sizes="(max-width: 768px) 140px, (max-width: 1280px) 192px, 224px"
