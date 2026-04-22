@@ -62,13 +62,18 @@ export function IncomeCalculator() {
                 <span className="text-4xl md:text-5xl font-black text-white break-words">{formatMoney(targetIncome)}</span>
               </div>
               
-              <input 
-                type="range" 
-                min={200000} 
-                max={2000000} 
+              <input
+                type="range"
+                min={200000}
+                max={2000000}
                 step={100000}
                 value={targetIncome}
                 onChange={(e) => setTargetIncome(Number(e.target.value))}
+                aria-label="Целевой доход в месяц"
+                aria-valuemin={200000}
+                aria-valuemax={2000000}
+                aria-valuenow={targetIncome}
+                aria-valuetext={`${formatMoney(targetIncome)} в месяц`}
                 className="w-full h-3 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-emerald-500 hover:accent-emerald-400 transition-all"
               />
               <div className="flex justify-between text-xs font-bold text-zinc-500 mt-4">
