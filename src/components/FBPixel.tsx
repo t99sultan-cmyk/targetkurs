@@ -11,6 +11,8 @@ declare global {
   }
 }
 
+const PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID || "4248112642068183";
+
 export function FBPixel() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -38,7 +40,7 @@ export function FBPixel() {
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1392840799194187');
+            fbq('init', '${PIXEL_ID}');
             fbq('track', 'PageView');
           `,
         }}
@@ -48,7 +50,7 @@ export function FBPixel() {
           height="1"
           width="1"
           style={{ display: "none" }}
-          src="https://www.facebook.com/tr?id=1392840799194187&ev=PageView&noscript=1"
+          src={`https://www.facebook.com/tr?id=${PIXEL_ID}&ev=PageView&noscript=1`}
         />
       </noscript>
     </>
