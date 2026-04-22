@@ -61,3 +61,65 @@ html {
     box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08);
   }
 }
+
+/* Coin rain animation */
+@keyframes coin-fall {
+  0% {
+    transform: translate3d(0, -40px, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--drift, 0), calc(100vh + 40px), 0) rotate(var(--rot, 360deg));
+    opacity: 0;
+  }
+}
+.coin-rain-piece {
+  position: absolute;
+  top: 0;
+  border-radius: 9999px;
+  box-shadow:
+    inset 0 -2px 3px rgba(0, 0, 0, 0.25),
+    inset 0 2px 3px rgba(255, 255, 255, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.2);
+  animation-name: coin-fall;
+  animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  will-change: transform, opacity;
+}
+
+/* Marquee scroll */
+@keyframes marquee-scroll-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+@keyframes marquee-scroll-right {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.marquee-track {
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+.marquee-track--left {
+  animation-name: marquee-scroll-left;
+}
+.marquee-track--right {
+  animation-name: marquee-scroll-right;
+}

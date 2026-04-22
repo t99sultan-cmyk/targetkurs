@@ -16,36 +16,11 @@ export function Marquee({
   className?: string;
   gap?: string;
 }) {
-  const animationName =
-    direction === "left" ? "marquee-scroll-left" : "marquee-scroll-right";
-
   return (
     <div className={`relative overflow-hidden ${className}`}>
-      <style jsx>{`
-        @keyframes marquee-scroll-left {
-          from {
-            transform: translate3d(0, 0, 0);
-          }
-          to {
-            transform: translate3d(-50%, 0, 0);
-          }
-        }
-        @keyframes marquee-scroll-right {
-          from {
-            transform: translate3d(-50%, 0, 0);
-          }
-          to {
-            transform: translate3d(0, 0, 0);
-          }
-        }
-        .marquee-track {
-          animation: ${animationName} ${speed}s linear infinite;
-          will-change: transform;
-        }
-      `}</style>
       <div
-        className="marquee-track flex w-max items-center"
-        style={{ gap }}
+        className={`marquee-track marquee-track--${direction} flex w-max items-center`}
+        style={{ gap, animationDuration: `${speed}s` }}
       >
         <div className="flex shrink-0 items-center" style={{ gap }}>
           {children}
