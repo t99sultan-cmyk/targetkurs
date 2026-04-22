@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Puzzle, XCircle, CheckCircle2, ArrowRight, MessageCircle } from "lucide-react";
+import { AnimatedCheckmark } from "@/components/ui/AnimatedCheckmark";
 
 export function ExpertIntro() {
   return (
@@ -45,9 +46,9 @@ export function ExpertIntro() {
             <div className="space-y-6 text-base md:text-lg text-zinc-700 font-medium relative z-10">
               <p>Анель 8 месяцев пыталась зарабатывать на таргете:</p>
               <ul className="space-y-2 mb-4">
-                 <li className="flex gap-2 items-center"><span className="text-emerald-500 font-bold">✅</span> Проходила курсы.</li>
-                 <li className="flex gap-2 items-center"><span className="text-emerald-500 font-bold">✅</span> Делала портфолио.</li>
-                 <li className="flex gap-2 items-center"><span className="text-emerald-500 font-bold">✅</span> Писала клиентам в директ.</li>
+                 <li className="flex gap-3 items-center"><AnimatedCheckmark size={22} delay={0.1} /> Проходила курсы.</li>
+                 <li className="flex gap-3 items-center"><AnimatedCheckmark size={22} delay={0.3} /> Делала портфолио.</li>
+                 <li className="flex gap-3 items-center"><AnimatedCheckmark size={22} delay={0.5} /> Писала клиентам в директ.</li>
               </ul>
               
               <div className="p-6 bg-red-50/50 rounded-2xl border border-red-100 space-y-4 text-base">

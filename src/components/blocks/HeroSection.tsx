@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 import { Countdown } from "@/components/ui/Countdown";
 import { SplitTextReveal } from "@/components/ui/SplitTextReveal";
+import { CountUp } from "@/components/ui/CountUp";
 const DriftingWidget = ({ children, className, delay, duration }: { children: React.ReactNode, className: string, delay: number, duration: number }) => (
   <div
     className={`flex flex-col bg-white/80 md:bg-white/90 backdrop-blur-2xl border border-white shadow-[0_20px_40px_rgba(0,0,0,0.08)] rounded-[2.5rem] p-5 overflow-hidden origin-center ${className}`}
@@ -59,7 +60,7 @@ export function HeroSection() {
               <div className="flex flex-col w-full text-left">
                 <span className="text-[11px] text-zinc-500 font-bold uppercase tracking-widest">Пополнение Kaspi</span>
                 <div className="relative h-8 overflow-hidden w-full mt-1">
-                  <span className="font-black text-2xl text-emerald-600 absolute left-0">+ 450 000 ₸</span>
+                  <span className="font-black text-2xl text-emerald-600 absolute left-0">+ <CountUp to={450000} duration={1.8} suffix=" ₸" /></span>
                 </div>
               </div>
             </div>
@@ -92,7 +93,7 @@ export function HeroSection() {
             
             <div className="space-y-4 max-w-2xl mx-auto px-4">
               <p className="text-lg md:text-xl text-zinc-600 font-medium leading-relaxed">
-                Ты уже сделал первый шаг. Ты понимаешь, что на таргете реально можно делать <strong className="text-zinc-950 bg-emerald-100 px-1 rounded">1 000 000 ₸+</strong>.
+                Ты уже сделал первый шаг. Ты понимаешь, что на таргете реально можно делать <strong className="text-zinc-950 bg-emerald-100 px-1 rounded"><CountUp to={1000000} duration={2.2} suffix=" ₸+" /></strong>.
               </p>
             </div>
 

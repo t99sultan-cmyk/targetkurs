@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/Card";
 import { AlertTriangle, Puzzle } from "lucide-react";
+import { Marquee } from "@/components/ui/Marquee";
 
 export function CasesSection() {
   const mentors = [
@@ -180,6 +181,24 @@ export function CasesSection() {
 
             </motion.div>
           </motion.div>
+        </div>
+
+        {/* Achievement marquee */}
+        <div className="relative py-6 border-y border-zinc-200 bg-gradient-to-r from-amber-50 via-white to-amber-50 mt-8">
+          <Marquee speed={45} gap="3rem" className="text-zinc-900 font-black uppercase tracking-wider text-sm md:text-base">
+            <span className="flex items-center gap-3">🏆 Первый миллион за 60 дней</span>
+            <span className="text-amber-500">•</span>
+            <span className="flex items-center gap-3">💎 Амир · 1 500 000₸ в месяц</span>
+            <span className="text-amber-500">•</span>
+            <span className="flex items-center gap-3">⚡ Набор 2026 открыт</span>
+            <span className="text-amber-500">•</span>
+            <span className="flex items-center gap-3">🔥 AI-инструменты в подарок</span>
+            <span className="text-amber-500">•</span>
+            <span className="flex items-center gap-3">🚀 Гарантия возврата 14 дней</span>
+            <span className="text-amber-500">•</span>
+            <span className="flex items-center gap-3">🎯 От нуля до клиентов за 30 дней</span>
+            <span className="text-amber-500">•</span>
+          </Marquee>
         </div>
 
       </div>
