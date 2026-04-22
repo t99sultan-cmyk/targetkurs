@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Puzzle, XCircle, CheckCircle2, TrendingUp, Zap } from "lucide-react";
 
 export function ProblemSolution() {
@@ -49,7 +50,7 @@ export function ProblemSolution() {
               viewport={{ once: true }}
               className="md:col-span-4 w-full aspect-[4/5] rounded-[2.5rem] overflow-hidden relative shadow-[0_20px_40px_rgba(0,0,0,0.1)] border border-zinc-200/50 sticky top-24 group hover:shadow-[0_40px_60px_rgba(0,0,0,0.15)] transition-shadow duration-500"
             >
-              <img src="/amir.png" alt="Амир" className="w-full h-full object-cover object-center bg-zinc-200 group-hover:scale-105 transition-transform duration-700" />
+              <Image src="/amir.png" alt="Амир" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-center bg-zinc-200 group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 pt-20">
                 <p className="text-white font-black text-2xl">Амир</p>
                 <p className="text-emerald-400 font-bold text-sm">Вышел на 1 500 000₸ в месяц</p>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/Card";
 import { AlertTriangle, Puzzle } from "lucide-react";
 import { Marquee } from "@/components/ui/Marquee";
@@ -117,16 +118,12 @@ export function CasesSection() {
               
               {/* Mentor 1 */}
               <div className="group relative w-[140px] md:w-48 xl:w-56 aspect-[3/4] shrink-0 overflow-hidden rounded-2xl shadow-lg border border-zinc-200 snap-center transition-all hover:w-[160px] md:hover:w-56 xl:hover:w-64 hover:shadow-2xl z-10">
-                <img 
-                  src="/jordan.png" 
-                  alt="Jordan Belfort" 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 bg-zinc-200" 
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    if(target.src.includes('mentor1.jpg')) {
-                       target.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop";
-                    }
-                  }}
+                <Image
+                  src="/jordan.png"
+                  alt="Jordan Belfort"
+                  fill
+                  sizes="(max-width: 768px) 140px, (max-width: 1280px) 192px, 224px"
+                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 bg-zinc-200"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                   <div className="absolute bottom-0 left-0 p-3 md:p-4 text-white">
@@ -138,16 +135,12 @@ export function CasesSection() {
 
               {/* Mentor 2 */}
               <div className="group relative w-[160px] md:w-56 xl:w-64 aspect-[3/4] shrink-0 overflow-hidden rounded-2xl shadow-xl border border-amber-500/30 snap-center transition-all hover:scale-105 hover:shadow-2xl z-20">
-                <img 
-                  src="/portnyagin.png" 
-                  alt="Dmitry Portnyagin" 
-                  className="w-full h-full object-cover transition-all duration-500 scale-105 group-hover:scale-100 bg-zinc-200"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    if(target.src.includes('mentor2.jpg')) {
-                      target.src = "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop";
-                    }
-                  }}
+                <Image
+                  src="/portnyagin.png"
+                  alt="Dmitry Portnyagin"
+                  fill
+                  sizes="(max-width: 768px) 160px, (max-width: 1280px) 224px, 256px"
+                  className="object-cover transition-all duration-500 scale-105 group-hover:scale-100 bg-zinc-200"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent">
                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-amber-400 to-amber-600" />
@@ -160,16 +153,12 @@ export function CasesSection() {
 
               {/* Mentor 3 */}
               <div className="group relative w-[140px] md:w-48 xl:w-56 aspect-[3/4] shrink-0 overflow-hidden rounded-2xl shadow-lg border border-zinc-200 snap-center transition-all hover:w-[160px] md:hover:w-56 xl:hover:w-64 hover:shadow-2xl z-10">
-                <img 
-                  src="/oskar.png" 
-                  alt="Oskar Hartmann" 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 bg-zinc-200"
-                  onError={(e) => {
-                     const target = e.target as HTMLImageElement;
-                     if(target.src.includes('mentor3.jpg')){
-                        target.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop";
-                     }
-                  }}
+                <Image
+                  src="/oskar.png"
+                  alt="Oskar Hartmann"
+                  fill
+                  sizes="(max-width: 768px) 140px, (max-width: 1280px) 192px, 224px"
+                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 bg-zinc-200"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                   <div className="absolute bottom-0 left-0 p-3 md:p-4 text-white">

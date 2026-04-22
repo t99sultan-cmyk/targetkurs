@@ -16,8 +16,8 @@ export function ProgramModules() {
 
   return (
     <section className="py-24 bg-[#0a0a0b] text-white relative overflow-hidden" id="element-3">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-500/20 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-sky-500/20 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="container px-4 md:px-6 mx-auto relative z-10">
         
@@ -48,7 +48,7 @@ export function ProgramModules() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="p-8 md:p-10 bg-zinc-900/50 backdrop-blur-xl rounded-[2.5rem] border border-zinc-800 relative overflow-hidden group hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] transition-shadow duration-700"
+            className="p-8 md:p-10 bg-zinc-900/80 rounded-[2.5rem] border border-zinc-800 relative overflow-hidden group hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] transition-shadow duration-700"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000" />
             
@@ -128,27 +128,27 @@ export function ProgramModules() {
             
             <div className="space-y-4 relative z-10 text-zinc-300 text-sm md:text-base mb-10">
                 <motion.div initial={{opacity:0, x:20}} whileInView={{opacity:1, x:0}} viewport={{once:true}} transition={{delay: 0.1}} className="bg-zinc-900/80 p-5 rounded-2xl border border-zinc-800 flex items-start gap-4 hover:border-sky-500/50 transition-colors">
-                  <span className="text-sky-400 font-bold text-xl drop-shadow-[0_0_10px_rgba(14,165,233,0.5)]">✅</span>
+                  <span className="text-sky-400 font-bold text-xl ">✅</span>
                   <p className="text-lg"><strong className="text-white">ChatGPT-4o / Claude 3.5 Sonnet</strong> – генерация текстов, аналитика аудиторий и написание прогревов.</p>
                 </motion.div>
                 <motion.div initial={{opacity:0, x:20}} whileInView={{opacity:1, x:0}} viewport={{once:true}} transition={{delay: 0.2}} className="bg-zinc-900/80 p-5 rounded-2xl border border-zinc-800 flex items-start gap-4 hover:border-sky-500/50 transition-colors">
-                  <span className="text-sky-400 font-bold text-xl drop-shadow-[0_0_10px_rgba(14,165,233,0.5)]">✅</span>
+                  <span className="text-sky-400 font-bold text-xl ">✅</span>
                   <p className="text-lg"><strong className="text-white">Midjourney v6.1 / Flux.1</strong> – создание крутых трендовых креативов без дизайнеров.</p>
                 </motion.div>
                 <motion.div initial={{opacity:0, x:20}} whileInView={{opacity:1, x:0}} viewport={{once:true}} transition={{delay: 0.3}} className="bg-zinc-900/80 p-5 rounded-2xl border border-zinc-800 flex items-start gap-4 hover:border-sky-500/50 transition-colors">
-                  <span className="text-sky-400 font-bold text-xl drop-shadow-[0_0_10px_rgba(14,165,233,0.5)]">✅</span>
+                  <span className="text-sky-400 font-bold text-xl ">✅</span>
                   <p className="text-lg"><strong className="text-white">HeyGen / Captions</strong> – создание идеальных видео-аватаров и субтитров для Reels.</p>
                 </motion.div>
                 <motion.div initial={{opacity:0, x:20}} whileInView={{opacity:1, x:0}} viewport={{once:true}} transition={{delay: 0.4}} className="bg-zinc-900/80 p-5 rounded-2xl border border-zinc-800 flex items-start gap-4 hover:border-sky-500/50 transition-colors">
-                  <span className="text-sky-400 font-bold text-xl drop-shadow-[0_0_10px_rgba(14,165,233,0.5)]">✅</span>
+                  <span className="text-sky-400 font-bold text-xl ">✅</span>
                   <p className="text-lg"><strong className="text-white">Perplexity Pro</strong> – глубокий ресерч ЦА, конкурентов и сбор фактов за секунды.</p>
                 </motion.div>
                 <motion.div initial={{opacity:0, x:20}} whileInView={{opacity:1, x:0}} viewport={{once:true}} transition={{delay: 0.5}} className="bg-zinc-900/80 p-5 rounded-2xl border border-zinc-800 flex items-start gap-4 hover:border-sky-500/50 transition-colors">
-                  <span className="text-sky-400 font-bold text-xl drop-shadow-[0_0_10px_rgba(14,165,233,0.5)]">✅</span>
+                  <span className="text-sky-400 font-bold text-xl ">✅</span>
                   <p className="text-lg"><strong className="text-white">Gamma App</strong> – создание продающих презентаций и лендингов за 1 минуту по промпту.</p>
                 </motion.div>
                 <motion.div initial={{opacity:0, x:20}} whileInView={{opacity:1, x:0}} viewport={{once:true}} transition={{delay: 0.6}} className="bg-zinc-900/80 p-5 rounded-2xl border border-zinc-800 flex items-start gap-4 hover:border-sky-500/50 transition-colors">
-                  <span className="text-sky-400 font-bold text-xl drop-shadow-[0_0_10px_rgba(14,165,233,0.5)]">✅</span>
+                  <span className="text-sky-400 font-bold text-xl ">✅</span>
                   <p className="text-lg"><strong className="text-white">Make.com + OpenAI API</strong> – полная автоматизация работы: от обработки лидов до рассылок.</p>
                 </motion.div>
             </div>

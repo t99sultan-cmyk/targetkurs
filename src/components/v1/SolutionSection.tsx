@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const SolutionSection: React.FC = () => {
   return (
@@ -8,8 +9,8 @@ const SolutionSection: React.FC = () => {
             <p className="text-lg font-bold mb-3">📢 Именно так мои ученики уже выходят на стабильные 500 000+ тг в месяц.</p>
             
             <div className="proof-gallery mt-5 mb-4 w-full flex flex-col items-center">
-              <img src="/v1-images/dilnaz_chat.jpg" alt="Скриншот переписки Дильназ" className="w-full max-w-sm shadow-xl" style={{ marginBottom: '40px', borderRadius: '16px', border: '5px solid #fff' }} />
-              <img src="/v1-images/islam_new_chat.jpg" alt="Скриншот переписки Ислама" className="w-full max-w-sm shadow-xl" style={{ borderRadius: '16px', border: '5px solid #fff' }} />
+              <Image src="/v1-images/dilnaz_chat.jpg" alt="Скриншот переписки Дильназ" width={500} height={900} sizes="(max-width: 480px) 100vw, 384px" className="w-full max-w-sm h-auto shadow-xl" style={{ marginBottom: '40px', borderRadius: '16px', border: '5px solid #fff' }} />
+              <Image src="/v1-images/islam_new_chat.jpg" alt="Скриншот переписки Ислама" width={500} height={900} sizes="(max-width: 480px) 100vw, 384px" className="w-full max-w-sm h-auto shadow-xl" style={{ borderRadius: '16px', border: '5px solid #fff' }} />
             </div>
          </div>
 
@@ -72,11 +73,11 @@ const SolutionSection: React.FC = () => {
             
             <div className="w-full flex flex-col items-center px-4">
                <div className="photo-frame w-full max-w-sm" style={{ marginBottom: '50px', padding: '12px', backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0 15px 35px rgba(0,0,0,0.15)' }}>
-                   <img src="/v1-images/intro_photo_suit.jpg" alt="Тимур в костюме" className="w-full" style={{ borderRadius: '6px', display: 'block' }} />
+                   <Image src="/v1-images/intro_photo_suit.jpg" alt="Тимур в костюме" width={600} height={800} sizes="(max-width: 480px) 100vw, 384px" className="w-full h-auto" style={{ borderRadius: '6px', display: 'block' }} />
                </div>
                
                <div className="photo-frame w-full max-w-sm" style={{ padding: '12px', backgroundColor: '#fff', borderRadius: '12px', boxShadow: '0 15px 35px rgba(0,0,0,0.15)' }}>
-                   <img src="/v1-images/intro_photo_money.jpg" alt="Результаты в тенге" className="w-full" style={{ borderRadius: '6px', display: 'block' }} />
+                   <Image src="/v1-images/intro_photo_money.jpg" alt="Результаты в тенге" width={600} height={800} sizes="(max-width: 480px) 100vw, 384px" className="w-full h-auto" style={{ borderRadius: '6px', display: 'block' }} />
                </div>
             </div>
           </div>

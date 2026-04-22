@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const CasesSection: React.FC = () => {
   return (
@@ -33,7 +34,7 @@ const CasesSection: React.FC = () => {
                  </div>
 
                  <div className="w-full flex justify-center mb-6 px-2">
-                    <img src="/v1-images/islam_case_1.jpg" alt="Скриншот переписки 1" className="w-full max-w-sm rounded-xl shadow-[0_10px_25px_rgba(0,0,0,0.15)] object-cover" style={{ border: '6px solid #fff' }} />
+                    <Image src="/v1-images/islam_case_1.jpg" alt="Скриншот переписки 1" width={500} height={900} sizes="(max-width: 480px) 100vw, 384px" className="w-full max-w-sm h-auto rounded-xl shadow-[0_10px_25px_rgba(0,0,0,0.15)] object-cover" style={{ border: '6px solid #fff' }} />
                  </div>
 
                  <p className="case-desc mb-5 text-lg">
@@ -41,7 +42,7 @@ const CasesSection: React.FC = () => {
                  </p>
 
                  <div className="w-full flex justify-center mb-6 px-2">
-                    <img src="/v1-images/islam_case_2.jpg" alt="Скриншот переписки 2" className="w-full max-w-sm rounded-xl shadow-[0_10px_25px_rgba(0,0,0,0.15)] object-cover" style={{ border: '6px solid #fff' }} />
+                    <Image src="/v1-images/islam_case_2.jpg" alt="Скриншот переписки 2" width={500} height={900} sizes="(max-width: 480px) 100vw, 384px" className="w-full max-w-sm h-auto rounded-xl shadow-[0_10px_25px_rgba(0,0,0,0.15)] object-cover" style={{ border: '6px solid #fff' }} />
                  </div>
                  
                  <p className="case-desc mb-5 text-lg font-medium">
@@ -49,7 +50,7 @@ const CasesSection: React.FC = () => {
                  </p>
 
                  <div className="w-full flex justify-center mt-2 mb-6 px-2">
-                    <img src="/v1-images/islam_case_3.jpg" alt="Скриншот переписки 3" className="w-full max-w-sm rounded-xl shadow-[0_10px_25px_rgba(0,0,0,0.15)] object-cover" style={{ border: '6px solid #fff' }} />
+                    <Image src="/v1-images/islam_case_3.jpg" alt="Скриншот переписки 3" width={500} height={900} sizes="(max-width: 480px) 100vw, 384px" className="w-full max-w-sm h-auto rounded-xl shadow-[0_10px_25px_rgba(0,0,0,0.15)] object-cover" style={{ border: '6px solid #fff' }} />
                  </div>
 
                  <div className="proof-contact mt-2">
@@ -83,7 +84,7 @@ const CasesSection: React.FC = () => {
                  </p>
 
                  <div className="w-full flex justify-center mt-5 mb-5 px-2">
-                    <img src="/v1-images/aliya_case.jpg" alt="Скриншот переписки Алии" className="w-full max-w-sm rounded-xl shadow-[0_10px_25px_rgba(0,0,0,0.15)] object-cover" style={{ border: '6px solid #fff' }} />
+                    <Image src="/v1-images/aliya_case.jpg" alt="Скриншот переписки Алии" width={500} height={900} sizes="(max-width: 480px) 100vw, 384px" className="w-full max-w-sm h-auto rounded-xl shadow-[0_10px_25px_rgba(0,0,0,0.15)] object-cover" style={{ border: '6px solid #fff' }} />
                  </div>
 
                  <p className="case-desc mb-5 text-lg">

@@ -32,7 +32,6 @@ export function Magnetic({ children, intensity = 0.2, className }: MagneticProps
       onMouseLeave={reset}
       animate={controls}
       className={className}
-      style={{ display: "inline-block" }}
     >
       {children}
     </motion.div>

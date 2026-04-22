@@ -7,7 +7,6 @@ import { Countdown } from "@/components/ui/Countdown";
 import { useWhatsAppClick } from "@/hooks/useWhatsAppClick";
 import { SplitTextReveal } from "@/components/ui/SplitTextReveal";
 import { Magnetic } from "@/components/ui/Magnetic";
-import { TiltCard } from "@/components/ui/TiltCard";
 
 export function PricingSection() {
   const { handleWhatsAppClick } = useWhatsAppClick();
@@ -108,30 +107,23 @@ export function PricingSection() {
               </div>
 
               {/* Extra button after bonuses per user request */}
-              <div className="pt-8 flex justify-center w-full">
-                <Magnetic intensity={0.25} className="w-full sm:w-auto">
-                  <a href="https://wa.me/77064089933?text=Здравствуйте,%20хочу%20пройти%20интенсив" onClick={handleWhatsAppClick} target="_blank" rel="noopener noreferrer" className="block w-full sm:w-auto">
-                    <Button size="lg" className="h-16 px-8 text-lg font-black bg-white hover:bg-zinc-100 text-zinc-950 rounded-2xl shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all hover:scale-105 group relative overflow-hidden w-full sm:w-auto">
-                      <span className="relative z-10 flex items-center justify-center gap-2">
-                         ЗАПИСАТЬСЯ НА ИНТЕНСИВ ЗА 1 990₸
-                      </span>
-                      <div className="absolute inset-0 bg-emerald-500/10 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out skew-x-12" />
-                    </Button>
-                  </a>
-                </Magnetic>
+              <div className="pt-8 flex justify-center w-full px-2">
+                <a href="https://wa.me/77064089933?text=Здравствуйте,%20хочу%20пройти%20интенсив" onClick={handleWhatsAppClick} target="_blank" rel="noopener noreferrer" className="block w-full max-w-md">
+                  <Button size="lg" className="h-auto min-h-16 py-4 px-6 text-base sm:text-lg font-black bg-white hover:bg-zinc-100 text-zinc-950 rounded-2xl shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all hover:scale-[1.02] group relative overflow-hidden w-full">
+                    <span className="relative z-10 flex items-center justify-center gap-2 text-center whitespace-normal leading-tight">
+                       ЗАПИСАТЬСЯ НА ИНТЕНСИВ ЗА 1 990₸
+                    </span>
+                    <div className="absolute inset-0 bg-emerald-500/10 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out skew-x-12" />
+                  </Button>
+                </a>
               </div>
            </motion.div>
 
-           <TiltCard
-              maxTilt={8}
-              scale={1.01}
-              className="lg:sticky lg:top-24 w-full"
-           >
            <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="p-6 sm:p-8 md:p-10 rounded-[2rem] sm:rounded-[3rem] bg-gradient-to-b from-zinc-800 to-zinc-900 border border-zinc-700 shadow-2xl w-full max-w-full overflow-hidden overflow-x-hidden box-border"
+              className="p-6 sm:p-8 md:p-10 rounded-[2rem] sm:rounded-[3rem] bg-gradient-to-b from-zinc-800 to-zinc-900 border border-zinc-700 shadow-2xl lg:sticky lg:top-24 w-full max-w-full overflow-hidden overflow-x-hidden box-border"
            >
               <div className="text-center mb-8">
                  <div className="flex flex-col items-center justify-center gap-2 mb-6 bg-zinc-900/80 p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] border border-zinc-700 shadow-inner w-full max-w-full overflow-hidden box-border">
@@ -150,7 +142,7 @@ export function PricingSection() {
                  </div>
               </div>
 
-               <Magnetic intensity={0.3} className="block w-full">
+               <Magnetic intensity={0.15} className="block w-full">
                  <a href="https://wa.me/77064089933?text=Здравствуйте,%20хочу%20пройти%20интенсив" onClick={handleWhatsAppClick} target="_blank" rel="noopener noreferrer" className="block w-full">
                    <Button size="lg" className="w-full h-[88px] text-lg sm:text-xl font-black bg-emerald-500 hover:bg-emerald-400 text-zinc-950 rounded-[20px] shadow-[0_0_40px_rgba(16,185,129,0.4)] transition-all hover:scale-[1.02] group relative overflow-hidden px-4 md:px-8">
                      <span className="relative z-10 flex items-center justify-center gap-2 text-center whitespace-normal leading-tight">
@@ -165,7 +157,6 @@ export function PricingSection() {
                  <Countdown />
                </div>
            </motion.div>
-           </TiltCard>
         </div>
 
         {/* Guarantee */}

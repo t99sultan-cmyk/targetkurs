@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Matter from "matter-js";
 
 export function CoinRain({
-  count = 25,
+  count = 14,
   variant = "gold",
 }: {
   count?: number;
@@ -39,20 +39,24 @@ export function CoinRain({
     const height = node.clientHeight;
     if (width === 0 || height === 0) return;
 
-    const engine = Matter.Engine.create({ gravity: { x: 0, y: 1, scale: 0.0012 } });
+    const engine = Matter.Engine.create({
+      gravity: { x: 0, y: 1, scale: 0.0013 },
+      enableSleeping: true,
+    });
+
     const render = Matter.Render.create({
       element: node,
       engine,
       options: {
         width,
         height,
-        pixelRatio: window.devicePixelRatio,
+        pixelRatio: 1,
         wireframes: false,
         background: "transparent",
       },
     });
 
-    const thickness = 60;
+    const thickness = 80;
     const floor = Matter.Bodies.rectangle(width / 2, height + thickness / 2 - 8, width, thickness, {
       isStatic: true,
       render: { visible: false },
@@ -74,15 +78,17 @@ export function CoinRain({
     for (let i = 0; i < count; i++) {
       spawnTimeouts.push(
         setTimeout(() => {
-          const radius = 8 + Math.random() * 6;
+          const radius = 9 + Math.random() * 5;
           const coin = Matter.Bodies.circle(
             radius + Math.random() * (width - radius * 2),
-            -radius - Math.random() * 40,
+            -radius - Math.random() * 20,
             radius,
             {
-              restitution: 0.55,
-              friction: 0.08,
+              restitution: 0.5,
+              friction: 0.1,
+              frictionAir: 0.012,
               density: 0.002,
+              sleepThreshold: 40,
               angle: Math.random() * Math.PI * 2,
               render: {
                 fillStyle: fill,
@@ -91,9 +97,9 @@ export function CoinRain({
               },
             },
           );
-          Matter.Body.setAngularVelocity(coin, (Math.random() - 0.5) * 0.15);
+          Matter.Body.setAngularVelocity(coin, (Math.random() - 0.5) * 0.1);
           Matter.Composite.add(engine.world, coin);
-        }, i * 90),
+        }, i * 120),
       );
     }
 
@@ -103,7 +109,8 @@ export function CoinRain({
 
     const stopTimeout = setTimeout(() => {
       Matter.Runner.stop(runner);
-    }, 10_000);
+      Matter.Render.stop(render);
+    }, 6_000);
 
     return () => {
       spawnTimeouts.forEach(clearTimeout);

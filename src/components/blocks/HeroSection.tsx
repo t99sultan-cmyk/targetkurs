@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { Zap, AlertTriangle, Clock } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -54,8 +55,8 @@ export function HeroSection() {
         <div className="w-full flex justify-center mb-8 sm:hidden">
           <DriftingWidget delay={0.3} duration={6} className="relative z-10 w-full max-w-[320px] scale-95 rotate-[-2deg]">
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 bg-white border border-zinc-100 rounded-2xl flex items-center justify-center shrink-0 shadow-lg p-2">
-                <img src="/Logo_of_Kaspi_bank.png" alt="Kaspi" className="w-full h-full object-contain" />
+              <div className="w-14 h-14 bg-white border border-zinc-100 rounded-2xl flex items-center justify-center shrink-0 shadow-lg p-2 relative">
+                <Image src="/Logo_of_Kaspi_bank.png" alt="Kaspi" fill sizes="56px" className="object-contain p-2" />
               </div>
               <div className="flex flex-col w-full text-left">
                 <span className="text-[11px] text-zinc-500 font-bold uppercase tracking-widest">Пополнение Kaspi</span>
