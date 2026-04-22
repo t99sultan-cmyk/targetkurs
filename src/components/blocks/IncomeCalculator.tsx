@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Calculator, Target, Users, TrendingUp } from "lucide-react";
+import { CoinRain } from "@/components/ui/CoinRain";
+import { SplitTextReveal } from "@/components/ui/SplitTextReveal";
 
 export function IncomeCalculator() {
   const [targetIncome, setTargetIncome] = useState(500000);
@@ -18,6 +20,7 @@ export function IncomeCalculator() {
   return (
     <section className="py-24 bg-zinc-950 text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#10b98122,transparent_50%)]" />
+      <CoinRain count={22} variant="emerald" />
       
       <div className="container px-4 md:px-6 mx-auto relative z-10">
         <div className="max-w-4xl mx-auto">
@@ -28,8 +31,19 @@ export function IncomeCalculator() {
               Декомпозиция цели
             </div>
             <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-6">
-              Как сделать твои первые <br />
-              <span className="text-emerald-400">{formatMoney(targetIncome)}</span>
+              <SplitTextReveal type="words" stagger={0.05}>
+                Как сделать твои первые
+              </SplitTextReveal>
+              <br />
+              <motion.span
+                key={targetIncome}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ type: "spring", stiffness: 200, damping: 14 }}
+                className="text-emerald-400 inline-block"
+              >
+                {formatMoney(targetIncome)}
+              </motion.span>
             </h2>
             <p className="text-lg text-zinc-400 font-medium">
               Перетяните ползунок, чтобы выбрать желаемый доход в месяц, и посмотрите, сколько клиентов для этого нужно.

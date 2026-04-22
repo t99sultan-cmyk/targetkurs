@@ -7,6 +7,7 @@ import { Countdown } from "@/components/ui/Countdown";
 import { useWhatsAppClick } from "@/hooks/useWhatsAppClick";
 import { SplitTextReveal } from "@/components/ui/SplitTextReveal";
 import { Magnetic } from "@/components/ui/Magnetic";
+import { TiltCard } from "@/components/ui/TiltCard";
 
 export function PricingSection() {
   const { handleWhatsAppClick } = useWhatsAppClick();
@@ -121,11 +122,16 @@ export function PricingSection() {
               </div>
            </motion.div>
 
+           <TiltCard
+              maxTilt={8}
+              scale={1.01}
+              className="lg:sticky lg:top-24 w-full"
+           >
            <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="p-6 sm:p-8 md:p-10 rounded-[2rem] sm:rounded-[3rem] bg-gradient-to-b from-zinc-800 to-zinc-900 border border-zinc-700 shadow-2xl lg:sticky lg:top-24 w-full max-w-full overflow-hidden overflow-x-hidden box-border"
+              className="p-6 sm:p-8 md:p-10 rounded-[2rem] sm:rounded-[3rem] bg-gradient-to-b from-zinc-800 to-zinc-900 border border-zinc-700 shadow-2xl w-full max-w-full overflow-hidden overflow-x-hidden box-border"
            >
               <div className="text-center mb-8">
                  <div className="flex flex-col items-center justify-center gap-2 mb-6 bg-zinc-900/80 p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] border border-zinc-700 shadow-inner w-full max-w-full overflow-hidden box-border">
@@ -159,6 +165,7 @@ export function PricingSection() {
                  <Countdown />
                </div>
            </motion.div>
+           </TiltCard>
         </div>
 
         {/* Guarantee */}
