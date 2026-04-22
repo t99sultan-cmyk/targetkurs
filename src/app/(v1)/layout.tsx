@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Script from "next/script";
+import { ParticlesBackground } from "@/components/ui/ParticlesBackground";
 
 export default function V1Layout({ children }: { children: ReactNode }) {
   return (
@@ -20,6 +21,7 @@ export default function V1Layout({ children }: { children: ReactNode }) {
         overflowX: 'hidden',
         position: 'relative'
       }}>
+        <ParticlesBackground variant="gold" />
         <Script id="yandex-metrika-v1" strategy="afterInteractive" dangerouslySetInnerHTML={{
           __html: `
             (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};

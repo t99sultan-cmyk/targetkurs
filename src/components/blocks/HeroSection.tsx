@@ -5,6 +5,7 @@ import { Zap, AlertTriangle, Clock } from "lucide-react";
 import { useState, useEffect } from "react";
 
 import { Countdown } from "@/components/ui/Countdown";
+import { SplitTextReveal } from "@/components/ui/SplitTextReveal";
 const DriftingWidget = ({ children, className, delay, duration }: { children: React.ReactNode, className: string, delay: number, duration: number }) => (
   <div
     className={`flex flex-col bg-white/80 md:bg-white/90 backdrop-blur-2xl border border-white shadow-[0_20px_40px_rgba(0,0,0,0.08)] rounded-[2.5rem] p-5 overflow-hidden origin-center ${className}`}
@@ -78,9 +79,14 @@ export function HeroSection() {
             
             {/* Main Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight text-zinc-950 px-2 sm:px-4">
-              Ты уже кликнул, и вроде готов вступить в команду. <br className="hidden md:block" />
+              <SplitTextReveal type="words" stagger={0.04}>
+                Ты уже кликнул, и вроде готов вступить в команду.
+              </SplitTextReveal>
+              <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-teal-400 to-indigo-500">
-                Или нет?
+                <SplitTextReveal type="chars" stagger={0.04} delay={0.8}>
+                  Или нет?
+                </SplitTextReveal>
               </span>
             </h1>
             
