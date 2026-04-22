@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { Countdown } from "@/components/ui/Countdown";
 import { SplitTextReveal } from "@/components/ui/SplitTextReveal";
 import { CountUp } from "@/components/ui/CountUp";
+import { LiveViewers } from "@/components/ui/LiveViewers";
 const DriftingWidget = ({ children, className, delay, duration }: { children: React.ReactNode, className: string, delay: number, duration: number }) => (
   <div
     className={`flex flex-col bg-white/80 md:bg-white/90 backdrop-blur-2xl border border-white shadow-[0_20px_40px_rgba(0,0,0,0.08)] rounded-[2.5rem] p-5 overflow-hidden origin-center ${className}`}
@@ -98,7 +99,8 @@ export function HeroSection() {
               </p>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-2 flex flex-col items-center gap-3">
+              <LiveViewers />
               <Countdown />
             </div>
           </motion.div>

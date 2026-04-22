@@ -4,6 +4,7 @@ import { FloatingDock } from "@/components/ui/FloatingDock";
 import { MouseGlow } from "@/components/ui/MouseGlow";
 import { ParticlesBackground } from "@/components/ui/ParticlesBackground";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import { StickyMobileCTA } from "@/components/ui/StickyMobileCTA";
 
 export default function MainLayout({ children }: { children: ReactNode }) {
   return (
@@ -37,6 +38,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
         {children}
         <FloatingDock />
       </div>
+      <StickyMobileCTA />
     </div>
   );
 }

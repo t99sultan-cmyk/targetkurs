@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { ReactNode, Suspense } from "react";
 import { Metrika } from "@/components/Metrika";
 import { FBPixel } from "@/components/FBPixel";
+import { StructuredData } from "@/components/StructuredData";
+import { Toaster } from "@/components/ui/Toaster";
 import "./globals.css";
 import { Inter, Outfit } from "next/font/google";
 
@@ -92,7 +94,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Metrika />
           <FBPixel />
         </Suspense>
+        <StructuredData />
         {children}
+        <Toaster />
       </body>
     </html>
   );

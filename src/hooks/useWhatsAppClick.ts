@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { showToast } from "@/components/ui/Toaster";
 
 export function useWhatsAppClick() {
   const handleWhatsAppClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -10,6 +11,7 @@ export function useWhatsAppClick() {
     const leadSent = sessionStorage.getItem('wa_lead_sent');
 
     if (leadSent === 'true') {
+      showToast("Открываем WhatsApp...");
       window.open(targetUrl, '_blank');
       return;
     }
@@ -33,6 +35,7 @@ export function useWhatsAppClick() {
     }).catch(err => console.error("Error sending CAPI logic:", err));
 
     sessionStorage.setItem('wa_lead_sent', 'true');
+    showToast("Отлично! Открываем WhatsApp — напишите нам там 👉");
     window.open(targetUrl, '_blank');
   };
 
