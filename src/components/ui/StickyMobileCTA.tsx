@@ -11,7 +11,7 @@ const WA_URL =
 export function StickyMobileCTA() {
   const { handleWhatsAppClick } = useWhatsAppClick();
   const [scrolled, setScrolled] = useState(false);
-  const intensiveOpen = useIntensiveOpen("pricing");
+  const intensiveOpen = useIntensiveOpen("price-card");
 
   useEffect(() => {
     const onScroll = () => {
