@@ -11,7 +11,7 @@ const WA_URL =
 export function FloatingDock() {
   const [hovered, setHovered] = useState(false);
   const { handleWhatsAppClick } = useWhatsAppClick();
-  const intensiveOpen = useIntensiveOpen("pricing");
+  const intensiveOpen = useIntensiveOpen("price-card");
 
   return (
     <div className="hidden sm:flex fixed bottom-6 right-6 z-[95] pointer-events-none">
