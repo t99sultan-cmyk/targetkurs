@@ -17,7 +17,7 @@ export function ProblemSolution() {
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ type: "spring" }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-red-500/10 text-red-500 rounded-full font-black text-sm mb-6 border border-red-500/20 shadow-[0_0_20px_rgba(239,68,68,0.2)]"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-red-500/10 text-red-500 whitespace-nowrap rounded-full font-black text-sm mb-6 border border-red-500/20 shadow-[0_0_20px_rgba(239,68,68,0.2)]"
             >
               <Puzzle className="w-5 h-5 text-red-500" />
               ЭЛЕМЕНТ №1
@@ -26,7 +26,7 @@ export function ProblemSolution() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-black tracking-tight leading-tight"
+              className="text-balance text-2xl sm:text-3xl md:text-5xl font-black tracking-tight leading-[1.1]"
             >
               «Твой навык – это <span className="relative inline-block"><span className="relative z-10 text-red-600">мусор</span><span className="absolute bottom-1 auto left-0 w-full h-3 bg-red-200/50 -z-10 rotate-2 rounded-sm"></span></span>, если ты не умеешь делать одно…»
             </motion.h2>

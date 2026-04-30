@@ -15,7 +15,7 @@ export function ExpertIntro() {
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ type: "spring" }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-500/10 text-indigo-400 rounded-full font-black text-sm mb-6 border border-indigo-500/20 shadow-[0_0_20px_rgba(99,102,241,0.2)]"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-500/10 text-indigo-400 whitespace-nowrap rounded-full font-black text-sm mb-6 border border-indigo-500/20 shadow-[0_0_20px_rgba(99,102,241,0.2)]"
             >
               <Puzzle className="w-5 h-5 text-indigo-400" />
               ЭЛЕМЕНТ №2
@@ -24,9 +24,14 @@ export function ExpertIntro() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-black tracking-tight leading-tight"
+              className="text-balance text-2xl sm:text-3xl md:text-5xl font-black tracking-tight leading-[1.1]"
             >
-              «Почему ты либо работаешь за копейки, либо <span className="relative inline-block"><span className="relative z-10 text-indigo-600">клиенты бегают за тобой</span><span className="absolute bottom-1 left-0 w-full h-3 bg-indigo-200/50 -z-10 -rotate-1 rounded-sm"></span></span>. Решать тебе.»
+              Либо работаешь за копейки — либо{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 text-indigo-600">клиенты идут сами</span>
+                <span className="absolute bottom-0.5 left-0 w-full h-2.5 bg-indigo-200/60 -z-10 -rotate-1 rounded-sm" />
+              </span>
+              . Решай.
             </motion.h2>
           </div>
 
@@ -36,7 +41,7 @@ export function ExpertIntro() {
             viewport={{ once: true }}
             className="p-8 md:p-10 bg-[#fafafa] rounded-[2.5rem] shadow-[inset_0_0_0_1px_rgba(0,0,0,0.05),_0_20px_40px_rgba(0,0,0,0.03)] mb-12 relative overflow-hidden group hover:shadow-[0_40px_60px_rgba(0,0,0,0.05)] transition-all duration-700"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none" />
             
             <h3 className="text-3xl font-black mb-6 flex items-center gap-4 relative z-10 w-full text-left">
               <span className="w-12 h-12 bg-indigo-600 text-white rounded-2xl flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(79,70,229,0.4)] rotate-3 group-hover:-rotate-3 transition-transform">2</span>

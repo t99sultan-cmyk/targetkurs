@@ -44,25 +44,6 @@ export function MoneyCounterReveal() {
       />
       <div className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent" aria-hidden />
 
-      <div className="absolute inset-0 pointer-events-none" aria-hidden>
-        {[
-          { left: "8%", delay: "0s", duration: "9s", size: "24px" },
-          { left: "22%", delay: "1.4s", duration: "11s", size: "20px" },
-          { left: "38%", delay: "2.8s", duration: "10s", size: "28px" },
-          { left: "60%", delay: "0.6s", duration: "12s", size: "22px" },
-          { left: "76%", delay: "2s", duration: "9.5s", size: "26px" },
-          { left: "90%", delay: "3.4s", duration: "11s", size: "22px" },
-        ].map((c, i) => (
-          <span
-            key={i}
-            className="coin"
-            style={{ left: c.left, fontSize: c.size, animationDelay: c.delay, animationDuration: c.duration }}
-          >
-            💸
-          </span>
-        ))}
-      </div>
-
       <div className="container px-4 md:px-6 mx-auto relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <motion.span
@@ -130,27 +111,6 @@ export function MoneyCounterReveal() {
         </div>
       </div>
 
-      <style>{`
-        .coin {
-          position: absolute;
-          bottom: -40px;
-          opacity: 0;
-          animation-name: coinRise;
-          animation-iteration-count: infinite;
-          animation-timing-function: ease-out;
-          will-change: transform, opacity;
-          filter: drop-shadow(0 4px 12px rgba(16,185,129,0.4));
-        }
-        @keyframes coinRise {
-          0% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
-          15% { opacity: 0.8; }
-          85% { opacity: 0.8; }
-          100% { transform: translate3d(20px, -540px, 0) rotate(40deg); opacity: 0; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .coin { display: none; }
-        }
-      `}</style>
     </section>
   );
 }

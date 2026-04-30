@@ -39,7 +39,7 @@ export function CasesSection() {
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring" }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500/10 text-amber-500 rounded-full font-black text-sm mb-6 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.2)]"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500/10 text-amber-500 whitespace-nowrap rounded-full font-black text-sm mb-6 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.2)]"
           >
             <Puzzle className="w-5 h-5 text-amber-500" />
             ЭЛЕМЕНТ №4
@@ -48,9 +48,14 @@ export function CasesSection() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black tracking-tight leading-tight text-zinc-950"
+            className="text-balance text-2xl sm:text-3xl md:text-5xl font-black tracking-tight leading-[1.1] text-zinc-950"
           >
-            «Отсутствие ментора – это <span className="relative inline-block"><span className="relative z-10 text-amber-500">самая дорогая ошибка</span><span className="absolute bottom-1 auto left-0 w-full h-3 bg-amber-200/50 -z-10 rotate-1 rounded-sm"></span></span> в твоей жизни.»
+            Без ментора —{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10 text-amber-500">самая дорогая ошибка</span>
+              <span className="absolute bottom-0.5 left-0 w-full h-2.5 bg-amber-200/60 -z-10 rotate-1 rounded-sm" />
+            </span>
+            .
           </motion.h2>
           <div className="mt-8 text-left max-w-2xl mx-auto space-y-4 text-lg text-zinc-600 font-medium">
              <p className="font-bold text-zinc-900">Ты можешь идти сам:</p>
@@ -110,11 +115,7 @@ export function CasesSection() {
               <h4 className="text-xl font-bold text-zinc-800">У кого я учился?</h4>
               <p className="text-lg font-medium text-amber-600">Мои наставники:</p>
             </div>
-            <motion.div 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="flex justify-start md:justify-center items-center gap-4 overflow-x-auto pb-4 snap-x hide-scrollbar max-w-full px-4 pt-4"
-            >
+            <div className="flex justify-start md:justify-center items-center gap-4 overflow-x-auto pb-4 snap-x hide-scrollbar max-w-full px-4 pt-4">
               
               {/* Mentor 1 */}
               <div className="group relative w-[140px] md:w-48 xl:w-56 aspect-[3/4] shrink-0 overflow-hidden rounded-2xl shadow-lg border border-zinc-200 snap-center transition-all hover:w-[160px] md:hover:w-56 xl:hover:w-64 hover:shadow-2xl z-10">
@@ -168,7 +169,7 @@ export function CasesSection() {
                 </div>
               </div>
 
-            </motion.div>
+            </div>
           </motion.div>
         </div>
 
