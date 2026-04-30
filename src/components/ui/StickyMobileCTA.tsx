@@ -3,22 +3,26 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useWhatsAppClick } from "@/hooks/useWhatsAppClick";
+import { useIntensiveOpen } from "@/hooks/useIntensiveOpen";
 
 const WA_URL =
   "https://wa.me/77064089933?text=Здравствуйте,%20хочу%20пройти%20интенсив";
 
 export function StickyMobileCTA() {
   const { handleWhatsAppClick } = useWhatsAppClick();
-  const [visible, setVisible] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const intensiveOpen = useIntensiveOpen();
 
   useEffect(() => {
     const onScroll = () => {
-      setVisible(window.scrollY > 600);
+      setScrolled(window.scrollY > 200);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const visible = intensiveOpen && scrolled;
 
   return (
     <AnimatePresence>
