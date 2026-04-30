@@ -5,7 +5,6 @@ import { MouseGlow } from "@/components/ui/MouseGlow";
 import { ParticlesBackground } from "@/components/ui/ParticlesBackground";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { StickyMobileCTA } from "@/components/ui/StickyMobileCTA";
-import { LiveIndicator } from "@/components/ui/LiveIndicator";
 
 export default function MainLayout({ children }: { children: ReactNode }) {
   return (
@@ -40,7 +39,6 @@ export default function MainLayout({ children }: { children: ReactNode }) {
         <FloatingDock />
       </div>
       <StickyMobileCTA />
-      <LiveIndicator />
     </div>
   );
 }

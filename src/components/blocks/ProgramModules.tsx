@@ -1,23 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Zap, Target, Puzzle, MonitorPlay } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Puzzle } from "lucide-react";
 
 export function ProgramModules() {
-  const [runningHours, setRunningHours] = useState(10);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRunningHours(prev => (prev > 3 ? prev - 1 : 10));
-    }, 1500);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="py-24 bg-[#0a0a0b] text-white relative overflow-hidden" id="element-3">
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-sky-500/20 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-sky-500/15 rounded-full pointer-events-none" style={{ filter: "blur(60px)" }} />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/10 rounded-full pointer-events-none" style={{ filter: "blur(60px)" }} />
 
       <div className="container px-4 md:px-6 mx-auto relative z-10">
         
@@ -26,7 +16,7 @@ export function ProgramModules() {
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring" }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-sky-500/10 text-sky-400 rounded-full font-black text-sm mb-6 border border-sky-500/20 shadow-[0_0_20px_rgba(14,165,233,0.2)]"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-sky-500/10 text-sky-400 whitespace-nowrap rounded-full font-black text-sm mb-6 border border-sky-500/20 shadow-[0_0_20px_rgba(14,165,233,0.2)]"
           >
             <Puzzle className="w-5 h-5 text-sky-400" />
             ЭЛЕМЕНТ №3
@@ -34,10 +24,16 @@ export function ProgramModules() {
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-tight"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.45 }}
+            className="text-balance text-2xl sm:text-3xl md:text-5xl font-black tracking-tight mb-6 leading-[1.1]"
           >
-            «Почему ты либо адаптируешься к трендам, либо скоро тебя <span className="relative inline-block"><span className="relative z-10 text-sky-400">заменит нейросеть</span><span className="absolute bottom-1 auto left-0 w-full h-3 bg-sky-500/30 -z-10 -rotate-1 rounded-sm"></span></span>.»
+            Адаптируешься к трендам — или{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10 text-sky-400">тебя заменит ИИ</span>
+              <span className="absolute bottom-0.5 left-0 w-full h-2.5 bg-sky-500/30 -z-10 -rotate-1 rounded-sm" />
+            </span>
+            .
           </motion.h2>
         </div>
 
@@ -48,9 +44,9 @@ export function ProgramModules() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="p-8 md:p-10 bg-zinc-900/80 rounded-[2.5rem] border border-zinc-800 relative overflow-hidden group hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] transition-shadow duration-700"
+            className="p-8 md:p-10 bg-zinc-900/80 rounded-[2.5rem] border border-zinc-800 relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-sky-500/10 rounded-full blur-2xl pointer-events-none" />
             
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 relative z-10">
               <span className="w-12 h-12 bg-sky-600 text-white rounded-2xl flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(14,165,233,0.4)] rotate-3 group-hover:-rotate-3 transition-transform">3</span>
