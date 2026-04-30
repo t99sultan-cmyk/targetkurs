@@ -96,6 +96,13 @@ export function PricingSection() {
                           <p className="text-emerald-400 text-sm font-bold uppercase tracking-wider mt-1">(Ценность: 100 000₸)</p>
                        </div>
                     </div>
+                    <div className="flex gap-4 p-4 bg-zinc-900/80 border border-zinc-800 rounded-2xl items-start">
+                       <span className="text-2xl pt-1">🎁</span>
+                       <div>
+                          <p className="font-bold text-white text-lg">Бонус 5: Чек-лист «5 ошибок таргетологов, которые сливают 80% бюджета»</p>
+                          <p className="text-emerald-400 text-sm font-bold uppercase tracking-wider mt-1">(Ценность: 25 000₸)</p>
+                       </div>
+                    </div>
                     <div className="flex gap-4 p-5 bg-emerald-900/20 border border-emerald-500/30 rounded-2xl items-start shadow-[0_0_30px_rgba(16,185,129,0.1)]">
                        <span className="text-3xl pt-1 animate-pulse">🔥</span>
                        <div>

@@ -1,21 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { Calculator, Target, Users, TrendingUp } from "lucide-react";
+import { useState, useDeferredValue, useMemo } from "react";
+import { Calculator, Target, TrendingUp } from "lucide-react";
 import { CoinRain } from "@/components/ui/CoinRain";
 import { SplitTextReveal } from "@/components/ui/SplitTextReveal";
 
 export function IncomeCalculator() {
   const [targetIncome, setTargetIncome] = useState(500000);
+  const deferred = useDeferredValue(targetIncome);
 
   const formatMoney = (val: number) => {
     return val.toLocaleString("ru-RU") + " ₸";
   };
 
-  const highTicketClients = Math.ceil(targetIncome / 200000);
-  const mediumTicketClients = Math.ceil(targetIncome / 100000);
-  const lowTicketClients = Math.ceil(targetIncome / 40000);
+  const calc = useMemo(() => {
+    const closed = Math.ceil(deferred / 200000);
+    return {
+      closed,
+      meetings: closed * 5,
+      tests: closed * 2,
+    };
+  }, [deferred]);
 
   return (
     <section className="py-24 bg-zinc-950 text-white relative overflow-hidden">
@@ -87,8 +93,8 @@ export function IncomeCalculator() {
               <div className="bg-zinc-800/50 border border-zinc-800/50 rounded-2xl p-6 relative overflow-hidden">
                 <h4 className="font-bold text-zinc-400 mb-2 uppercase tracking-wide text-sm">Шаг 1: Встречи</h4>
                 <div className="flex items-baseline gap-2 mb-4">
-                  <span className="text-4xl font-black text-zinc-300">
-                    {Math.ceil((targetIncome / 200000) * 5)} 
+                  <span className="text-4xl font-black text-zinc-300 tabular-nums">
+                    {calc.meetings}
                   </span>
                   <span className="text-zinc-500 font-medium">встреч</span>
                 </div>
@@ -101,8 +107,8 @@ export function IncomeCalculator() {
               <div className="bg-zinc-800 border border-zinc-700 rounded-2xl p-6 relative overflow-hidden">
                 <h4 className="font-bold text-zinc-300 mb-2 uppercase tracking-wide text-sm">Шаг 2: Тесты</h4>
                 <div className="flex items-baseline gap-2 mb-4">
-                  <span className="text-4xl font-black text-white">
-                    {Math.ceil((targetIncome / 200000) * 2)}
+                  <span className="text-4xl font-black text-white tabular-nums">
+                    {calc.tests}
                   </span>
                   <span className="text-zinc-500 font-medium">клиентов</span>
                 </div>
@@ -118,8 +124,8 @@ export function IncomeCalculator() {
                 </div>
                 <h4 className="font-bold text-emerald-400 mb-2 relative z-10 uppercase tracking-wide text-sm">Шаг 3: Ведение</h4>
                 <div className="flex items-baseline gap-2 mb-4 relative z-10">
-                  <span className="text-4xl font-black text-white">
-                    {Math.ceil(targetIncome / 200000)}
+                  <span className="text-4xl font-black text-white tabular-nums">
+                    {calc.closed}
                   </span>
                   <span className="text-emerald-100/70 font-medium">клиентов</span>
                 </div>
@@ -132,7 +138,7 @@ export function IncomeCalculator() {
             <div className="mt-8 p-6 bg-emerald-500/5 border border-emerald-500/20 rounded-xl flex items-start gap-4">
               <Target className="w-6 h-6 text-emerald-500 shrink-0 mt-1" />
               <p className="text-zinc-300 font-medium text-sm md:text-base">
-                Видишь? Чтобы заработать <strong className="text-emerald-400">{formatMoney(targetIncome)}</strong>, нужно закрыть всего <strong>{Math.ceil(targetIncome / 200000)}</strong> клиентов на основной чек. А для этого — провести {Math.ceil((targetIncome / 200000) * 5)} встреч. Это простая математика, а не чудо.
+                Видишь? Чтобы заработать <strong className="text-emerald-400 tabular-nums">{formatMoney(deferred)}</strong>, нужно закрыть всего <strong className="tabular-nums">{calc.closed}</strong> клиентов на основной чек. А для этого — провести <span className="tabular-nums">{calc.meetings}</span> встреч. Это простая математика, а не чудо.
               </p>
             </div>
           </motion.div>

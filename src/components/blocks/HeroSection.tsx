@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Zap, AlertTriangle, Clock } from "lucide-react";
 import { useState, useEffect } from "react";
 
-import { Countdown } from "@/components/ui/Countdown";
 import { SplitTextReveal } from "@/components/ui/SplitTextReveal";
 import { CountUp } from "@/components/ui/CountUp";
 import { LiveViewers } from "@/components/ui/LiveViewers";
@@ -101,7 +100,6 @@ export function HeroSection() {
 
             <div className="pt-2 flex flex-col items-center gap-3">
               <LiveViewers />
-              <Countdown />
             </div>
           </motion.div>
 
