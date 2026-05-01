@@ -14,17 +14,6 @@ type Q = {
 
 const questions: Q[] = [
   {
-    id: "age",
-    question: "Сколько тебе лет?",
-    options: [
-      { value: "u18", label: "До 18 лет" },
-      { value: "18-24", label: "18–24" },
-      { value: "25-34", label: "25–34" },
-      { value: "35-44", label: "35–44" },
-      { value: "45+", label: "45 и старше" },
-    ],
-  },
-  {
     id: "exp",
     question: "Какой у тебя опыт с таргетом?",
     options: [
@@ -80,7 +69,6 @@ function buildResult(answers: Record<string, string>) {
   const goal = answers.goal;
   const time = answers.time;
   const ready = answers.ready;
-  const age = answers.age;
 
   let headline = "Тебе подходит интенсив";
   let body =
@@ -90,12 +78,6 @@ function buildResult(answers: Record<string, string>) {
     headline = "Сейчас, похоже, не твоё время";
     body =
       "Если откладываешь — результата не будет, как бы ни был хорош материал. Возвращайся, когда будешь готов реально вкладываться.";
-    return { headline, body };
-  }
-  if (age === "u18") {
-    headline = "Рано, но направление правильное";
-    body =
-      "До 18 — заходи, изучай, разбирайся. Но реальные деньги пойдут, когда сможешь работать с клиентами как взрослый. Напиши — расскажу, с чего начать сейчас.";
     return { headline, body };
   }
 
