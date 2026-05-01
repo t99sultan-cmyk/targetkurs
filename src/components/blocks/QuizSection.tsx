@@ -14,16 +14,6 @@ type Q = {
 
 const questions: Q[] = [
   {
-    id: "exp",
-    question: "Какой у тебя опыт с таргетом?",
-    options: [
-      { value: "none", label: "Совсем новичок — никогда не запускал рекламу" },
-      { value: "junior", label: "Запускал немного, доход до 100 000 ₸" },
-      { value: "mid", label: "Работаю таргетологом, 100–400 000 ₸/мес" },
-      { value: "senior", label: "Опытный, выше 400 000 ₸/мес, нужен рост" },
-    ],
-  },
-  {
     id: "time",
     question: "Сколько часов в день готов уделять?",
     options: [
@@ -65,10 +55,10 @@ const questions: Q[] = [
 ];
 
 function buildResult(answers: Record<string, string>) {
-  const exp = answers.exp;
   const goal = answers.goal;
   const time = answers.time;
   const ready = answers.ready;
+  const block = answers.block;
 
   let headline = "Тебе подходит интенсив";
   let body =
@@ -81,22 +71,22 @@ function buildResult(answers: Record<string, string>) {
     return { headline, body };
   }
 
-  if (exp === "none" && goal === "1m") {
-    headline = "Высокая цель — но реальная";
-    body =
-      "С нуля до 1 000 000 ₸ — это интенсив + дисциплина 90 дней. Покажу пошаговый план.";
-  } else if (exp === "senior") {
-    headline = "Тебе нужно масштабирование, а не база";
-    body =
-      "Скорее всего, тебе подойдёт работа в команде, а не интенсив. Обсудим в WhatsApp.";
-  } else if (time === "low" && goal === "1m") {
+  if (time === "low" && goal === "1m") {
     headline = "Цель амбициозная, времени мало";
     body =
       "Реалистично — выход на 500 000 ₸ за 60 дней при 1–2 часах. К миллиону — позже. Покажу план.";
-  } else if (exp === "junior") {
-    headline = "Идеальный стартовый профиль";
+  } else if (goal === "1m") {
+    headline = "Высокая цель — но реальная";
     body =
-      "У тебя уже есть база — на интенсиве ты быстро поднимешь чек и системно соберёшь поток клиентов.";
+      "1 000 000 ₸+ — это интенсив + дисциплина 60 дней. Покажу пошаговый план.";
+  } else if (block === "burn") {
+    headline = "Похоже, ты упёрся в потолок";
+    body =
+      "Если работаешь много, а денег мало — нужна другая система чеков и продаж. Это и есть интенсив.";
+  } else if (block === "noclients") {
+    headline = "База + поток клиентов — твой профиль";
+    body =
+      "Покажу пошагово: где брать клиентов системно, без нытья в директе.";
   }
   return { headline, body };
 }
@@ -162,7 +152,7 @@ export function QuizSection() {
             Подходит ли тебе интенсив?
           </h2>
           <p className="text-base text-zinc-500 font-medium mt-3">
-            5 вопросов — и я скажу честно, стоит ли тебе заходить и какой
+            4 коротких вопроса — и я скажу честно, стоит ли тебе заходить и какой
             результат реален именно для тебя.
           </p>
         </div>
