@@ -14,6 +14,17 @@ type Q = {
 
 const questions: Q[] = [
   {
+    id: "age",
+    question: "Сколько тебе лет?",
+    options: [
+      { value: "u18", label: "До 18 лет" },
+      { value: "18-24", label: "18–24" },
+      { value: "25-34", label: "25–34" },
+      { value: "35-44", label: "35–44" },
+      { value: "45+", label: "45 и старше" },
+    ],
+  },
+  {
     id: "exp",
     question: "Какой у тебя опыт с таргетом?",
     options: [
@@ -52,13 +63,14 @@ const questions: Q[] = [
     ],
   },
   {
-    id: "where",
-    question: "Где ты сейчас?",
+    id: "ready",
+    question:
+      "Готов реально действовать — поглощать знания, внедрять, не откладывать на потом?",
     options: [
-      { value: "kz", label: "Казахстан" },
-      { value: "ru", label: "Россия" },
-      { value: "cis", label: "Другая страна СНГ" },
-      { value: "world", label: "За пределами СНГ" },
+      { value: "now", label: "Да, готов начать прямо сейчас" },
+      { value: "soon", label: "Готов, но нужно немного времени собраться" },
+      { value: "maybe", label: "Думаю, попробую — посмотрю, как пойдёт" },
+      { value: "later", label: "Скорее всего отложу, не сейчас" },
     ],
   },
 ];
@@ -67,10 +79,26 @@ function buildResult(answers: Record<string, string>) {
   const exp = answers.exp;
   const goal = answers.goal;
   const time = answers.time;
+  const ready = answers.ready;
+  const age = answers.age;
 
   let headline = "Тебе подходит интенсив";
   let body =
     "Ты в той точке, где система даёт максимум прироста за короткий срок.";
+
+  if (ready === "later") {
+    headline = "Сейчас, похоже, не твоё время";
+    body =
+      "Если откладываешь — результата не будет, как бы ни был хорош материал. Возвращайся, когда будешь готов реально вкладываться.";
+    return { headline, body };
+  }
+  if (age === "u18") {
+    headline = "Рано, но направление правильное";
+    body =
+      "До 18 — заходи, изучай, разбирайся. Но реальные деньги пойдут, когда сможешь работать с клиентами как взрослый. Напиши — расскажу, с чего начать сейчас.";
+    return { headline, body };
+  }
+
   if (exp === "none" && goal === "1m") {
     headline = "Высокая цель — но реальная";
     body =
