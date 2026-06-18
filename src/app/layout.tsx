@@ -5,17 +5,20 @@ import { FBPixel } from "@/components/FBPixel";
 import { StructuredData } from "@/components/StructuredData";
 import { Toaster } from "@/components/ui/Toaster";
 import "./globals.css";
-import { Inter, Outfit } from "next/font/google";
+import { Onest, Unbounded } from "next/font/google";
 
-const inter = Inter({ 
+// Body — чистый, читаемый, с кириллицей.
+const onest = Onest({
   subsets: ["latin", "cyrillic"],
-  variable: '--font-inter',
+  variable: "--font-body",
 });
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: '--font-outfit',
+// Заголовки — характерный display с полной кириллицей (у Outfit её не было,
+// поэтому русские заголовки падали на дефолтный sans).
+const unbounded = Unbounded({
+  subsets: ["latin", "cyrillic"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-heading",
 });
 
 export const metadata: Metadata = {
@@ -88,8 +91,8 @@ export const viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ru" className={`${inter.variable} ${outfit.variable} scroll-smooth`}>
-      <body className={`${inter.className}`}>
+    <html lang="ru" className={`${onest.variable} ${unbounded.variable} scroll-smooth`}>
+      <body className={`${onest.className}`}>
         <Suspense fallback={null}>
           <Metrika />
           <FBPixel />

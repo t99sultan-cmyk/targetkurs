@@ -16,7 +16,7 @@ export function Metrika() {
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.ym) {
-      window.ym(108283829, "hit", window.location.href);
+      window.ym(109966578, "hit", window.location.href);
     }
   }, [pathname, searchParams]);
 
@@ -32,9 +32,9 @@ export function Metrika() {
                 m[i].l=1*new Date();
                 for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
                 k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-            })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108283829', 'ym');
+            })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109966578', 'ym');
 
-            ym(108283829, 'init', {
+            ym(109966578, 'init', {
               ssr:true, 
               webvisor:true, 
               clickmap:true, 
@@ -50,7 +50,7 @@ export function Metrika() {
       <noscript>
         <div>
           <img
-            src="https://mc.yandex.ru/watch/108283829"
+            src="https://mc.yandex.ru/watch/109966578"
             style={{ position: "absolute", left: "-9999px" }}
             alt=""
           />
